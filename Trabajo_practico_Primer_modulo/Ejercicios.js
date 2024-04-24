@@ -17,9 +17,30 @@ function convertirEnFormatoDeTitulo(texto){
 
 let textoParaModificar = "este texto es increiblemente bueno";
 console.log(convertirEnFormatoDeTitulo(textoParaModificar));
-/*****************************************************************************************************/
+/****************************************************************************************************************/
 
-/**Ejercicio 2:Concatenar elementos de un array con un separador personalizado:
+/** Ejercicio 2: Concatenar elementos de un array con un separador personalizado:
  * Crear una función que reciba un array de strings y un separador, y devuelva una sola cadena de
  * texto que contenga todos los elementos del array concatenados con el separador especificado.
+ */
+
+function concatenarElementosConSeparador(elementos, separador){
+    let elementosConcatenados = "";
+    for (let i = 0; i < elementos.length; i++){
+        elementosConcatenados += elementos[i];
+        if(i != elementos.length - 1){
+            elementosConcatenados += separador;
+        }
+    }
+    return elementosConcatenados;
+}
+
+let elementosParaConcatenar = ["Hola", "soy", "Mauricio", "Falcon", "y", "este", "texto", "es", "increible"];
+let elementoSeparador = "-"
+console.log(concatenarElementosConSeparador(elementosParaConcatenar, elementoSeparador))
+/****************************************************************************************************************/
+
+/** Ejercicio 3: Revertir las palabras de una frase.
+ * Crear una función que reciba una cadena de texto y devuelva la misma cadena con las palabras
+ * en orden inverso
  */
