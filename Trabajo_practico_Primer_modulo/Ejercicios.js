@@ -193,5 +193,41 @@ function extraerDominio(correoElectronico){
 }
 
 let correoDePrueba = "correo.genial@argentina.campeon"
-console.log(extraerDominio(correoDePrueba));
+//console.log(extraerDominio(correoDePrueba));
 /****************************************************************************************************************/
+
+/** Ejercicio 8: Combinar dos arrays alternando sus elementos.
+ * Crear una función que reciba dos arrays y devuelva un nuevo array 
+ * con los elementos de ambos arrays combinados alternativamente
+ */
+
+function combinarArrays(primerArray, segundoArray){
+    let arrayCombinado = [];
+    let cantidadDeElentos = 0;
+
+    if (primerArray.length > segundoArray.length) {
+        cantidadDeElentos = primerArray.length;
+    } else {
+        cantidadDeElentos = segundoArray.length;
+    }
+
+    for (let i = 0; i < cantidadDeElentos; i++) {
+        if (i < array1.length) {
+            arrayCombinado.push(primerArray[i]);
+        }
+        if (i < array2.length) {
+            arrayCombinado.push(segundoArray[i]);
+        }
+    }
+
+    return arrayCombinado;
+}
+
+let array1 = [1, 2, 3];
+let array2 = ['a', 'b', 'c', 'd'];
+console.log(combinarArrays(array1, array2));
+/****************************************************************************************************************/
+
+/** Ejercicio 9: 
+ * 
+ */
