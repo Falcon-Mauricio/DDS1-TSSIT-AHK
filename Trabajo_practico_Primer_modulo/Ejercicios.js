@@ -165,9 +165,33 @@ function eliminarEspaciosDelInicioYFinal(cadena){
 }
 
 let cadenaDeEjemplo = "    JavaScript es divertido   ";
-console.log(eliminarEspaciosDelInicioYFinal(cadenaDeEjemplo));
+//console.log(eliminarEspaciosDelInicioYFinal(cadenaDeEjemplo));
 /****************************************************************************************************************/
 
 /** Ejercicio 7: Extraer el dominio de una dirección de correo electrónico.
  * Crear una función que reciba una dirección de correo electrónico y devuelva únicamente el dominio de la misma.
  */
+
+function extraerDominio(correoElectronico){
+    let dominio = "";
+    let correoElectronicoValido = false;
+    let i = 0;
+
+    for (let j = 0; j < correoElectronico.length; j++){
+        if(correoElectronico[j] == "@"){
+            correoElectronicoValido = true;
+            i = j + 1;
+        }
+    }
+
+    if (correoElectronicoValido){
+        for (; i < correoElectronico.length; i++) {
+            dominio += correoElectronico[i];
+        }
+    }
+    return dominio;
+}
+
+let correoDePrueba = "correo.genial@argentina.campeon"
+console.log(extraerDominio(correoDePrueba));
+/****************************************************************************************************************/
