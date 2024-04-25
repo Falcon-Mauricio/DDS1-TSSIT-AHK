@@ -87,7 +87,7 @@ function contarUsoDeLaPalabraEnTexto(texto, palabraParaBuscar){
 
     texto = texto.toLowerCase();
     palabraParaBuscar = palabraParaBuscar.toLowerCase();
-    
+
     for (let i = 0; i < texto.length; i++) {
         if (texto[i] != " ") {
             palabraEncontrada += texto[i];
@@ -109,4 +109,33 @@ function contarUsoDeLaPalabraEnTexto(texto, palabraParaBuscar){
 let textoParaLeer = "El dia de hoy me ecuentro leyendo el libro de el escritor James Clear el de Habitos Atomicos";
 let palabraClave = "El";
 console.log(contarUsoDeLaPalabraEnTexto(textoParaLeer, palabraClave));
+/****************************************************************************************************************/
+
+/** Ejercicio 5: Comprobar si una cadena de texto termina con un determinado sufijo
+ * Crear una función que reciba una cadena de texto y un sufijo, y devuelva true si la cadena
+ * termina con ese sufijo, false en caso contrario.
+ */
+
+function terminaConSufijo(cadena, sufijo) {
+    if (sufijo.length > cadena.length) {
+        return false;
+    }
+
+    let sufijoIndex = sufijo.length - 1;
+    let cadenaIndex = cadena.length - 1;
+
+    while (sufijoIndex >= 0) {
+        if (cadena[cadenaIndex] !== sufijo[sufijoIndex]) {
+            return false;
+        }
+        sufijoIndex--;
+        cadenaIndex--;
+    }
+
+    return true;
+}
+
+const ejemploCadena = "JavaScript es un lenguaje de programación";
+const sufijoUsado = "ón";
+console.log(cadenaTerminaConSufijo(ejemploCadena, sufijoUsado));
 /****************************************************************************************************************/
