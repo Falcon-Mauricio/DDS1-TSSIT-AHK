@@ -137,5 +137,5 @@ function terminaConSufijo(cadena, sufijo) {
 
 const ejemploCadena = "JavaScript es un lenguaje de programación";
 const sufijoUsado = "ón";
-console.log(cadenaTerminaConSufijo(ejemploCadena, sufijoUsado));
+//console.log(terminaConSufijo(ejemploCadena, sufijoUsado));
 /****************************************************************************************************************/
