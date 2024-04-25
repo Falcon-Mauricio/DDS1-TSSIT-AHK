@@ -73,4 +73,39 @@ function revertirPalabras(frase) {
 }
 
 let fraseOriginal = "Soy Mauricio Falcon y estoy estudiando";
-console.log(revertirPalabras(fraseOriginal));
+//console.log(revertirPalabras(fraseOriginal));
+/****************************************************************************************************************/
+
+/** Ejercicio 4: Contar la cantidad de veces que aparece una palabra en una cadena:
+ * Crear una función que reciba una cadena de texto y una palabra, y devuelva la cantidad de
+ * veces que aparece esa palabra en la cadena.
+ */
+
+function contarUsoDeLaPalabraEnTexto(texto, palabraParaBuscar){
+    let vecesQueSeRepiteLaPalabra = 0;
+    let palabraEncontrada = "";
+
+    texto = texto.toLowerCase();
+    
+    for (let i = 0; i < texto.length; i++) {
+        if (texto[i] != " ") {
+            palabraEncontrada += texto[i];
+        }
+        else if (palabraEncontrada == palabraParaBuscar) {
+            vecesQueSeRepiteLaPalabra++; 
+            palabraEncontrada = "";
+        }
+        else palabraEncontrada = "";
+    }
+
+    if (palabraEncontrada == palabraParaBuscar) {
+        vecesQueSeRepiteLaPalabra++;
+    }
+
+    return vecesQueSeRepiteLaPalabra;
+}
+
+let textoParaLeer = "El dia de hoy me ecuentro leyendo el libro de el escritor James Clear el de Habitos Atomicos";
+let palabraClave = "el";
+console.log(contarUsoDeLaPalabraEnTexto(textoParaLeer, palabraClave));
+/****************************************************************************************************************/
