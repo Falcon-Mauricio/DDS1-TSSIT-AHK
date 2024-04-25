@@ -254,5 +254,26 @@ function calcularImpuestos(edad, ingresos){
 
 let edadDelTrabajador = 40;
 let ingresosDelTrabajador = 1000;
-console.log(calcularImpuestos(edadDelTrabajador, ingresosDelTrabajador));
+//console.log(calcularImpuestos(edadDelTrabajador, ingresosDelTrabajador));
 /****************************************************************************************************************/
+
+/** Ejercicio 10: Resumen de cantidad de likes
+ * Desarrollar una función que, dada una cantidad numérica de likes, devuelva un texto informativo
+ * de la cantidad de likes en formato de “K” para miles y “M” para millones.
+ */
+
+function resumenLikes(likes){
+    if (likes >= 1000000) {
+        let decimalesDepuesDelMillon = likes % 100000;
+        let likesEnMillones = (likes - decimalesDepuesDelMillon) / 1000000;
+        return likesEnMillones + "M";
+    } else if (likes >= 1000){
+        let decimalesDespuesDeMil = likes % 100;
+        let likesEnMiles = (likes - decimalesDespuesDeMil) / 1000;
+        return likesEnMiles + "K";
+    } else {
+        return likes;
+    }
+}
+
+console.log(resumenLikes(34567));
