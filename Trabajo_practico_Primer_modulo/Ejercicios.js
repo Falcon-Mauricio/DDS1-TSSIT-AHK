@@ -86,6 +86,7 @@ function contarUsoDeLaPalabraEnTexto(texto, palabraParaBuscar){
     let palabraEncontrada = "";
 
     texto = texto.toLowerCase();
+    palabraParaBuscar = palabraParaBuscar.toLowerCase();
     
     for (let i = 0; i < texto.length; i++) {
         if (texto[i] != " ") {
@@ -106,6 +107,6 @@ function contarUsoDeLaPalabraEnTexto(texto, palabraParaBuscar){
 }
 
 let textoParaLeer = "El dia de hoy me ecuentro leyendo el libro de el escritor James Clear el de Habitos Atomicos";
-let palabraClave = "el";
+let palabraClave = "El";
 console.log(contarUsoDeLaPalabraEnTexto(textoParaLeer, palabraClave));
 /****************************************************************************************************************/
