@@ -108,7 +108,7 @@ function contarUsoDeLaPalabraEnTexto(texto, palabraParaBuscar){
 
 let textoParaLeer = "El dia de hoy me ecuentro leyendo el libro de el escritor James Clear el de Habitos Atomicos";
 let palabraClave = "El";
-console.log(contarUsoDeLaPalabraEnTexto(textoParaLeer, palabraClave));
+//console.log(contarUsoDeLaPalabraEnTexto(textoParaLeer, palabraClave));
 /****************************************************************************************************************/
 
 /** Ejercicio 5: Comprobar si una cadena de texto termina con un determinado sufijo
@@ -139,3 +139,35 @@ const ejemploCadena = "JavaScript es un lenguaje de programación";
 const sufijoUsado = "ón";
 //console.log(terminaConSufijo(ejemploCadena, sufijoUsado));
 /****************************************************************************************************************/
+
+/** Ejercicio 6: Eliminar los espacios en blanco al inicio y final de una cadena
+ * Crear una función que reciba una cadena de texto y elimine los espacios en blanco al inicio y
+ * final de la misma.
+ */
+function eliminarEspaciosDelInicioYFinal(cadena){
+    let palabraEncontrada = "";
+    let palabrasAlmacenadas = [];
+
+    for (let i = 0; i < cadena.length; i++) {
+        if (cadena[i] != " ") {
+            palabraEncontrada += cadena[i];
+        } else if (palabraEncontrada != "") {
+            palabrasAlmacenadas.push(palabraEncontrada); 
+            palabraEncontrada = "";
+        }
+    }
+
+    if (palabraEncontrada != "") {
+        palabrasAlmacenadas.push(palabraEncontrada);
+    }
+
+    return concatenarElementosConSeparador(palabrasAlmacenadas, " ")
+}
+
+let cadenaDeEjemplo = "    JavaScript es divertido   ";
+console.log(eliminarEspaciosDelInicioYFinal(cadenaDeEjemplo));
+/****************************************************************************************************************/
+
+/** Ejercicio 7: Extraer el dominio de una dirección de correo electrónico.
+ * Crear una función que reciba una dirección de correo electrónico y devuelva únicamente el dominio de la misma.
+ */
