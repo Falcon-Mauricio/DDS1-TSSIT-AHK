@@ -1,7 +1,7 @@
 /** Ejercicio 1: Convertir una cadena de texto a formato de título.
  * Crear una función que reciba una frase (string) y devuelva la misma frase con el formato de
  * título, donde la primera letra de cada palabra está en mayúscula y el resto en minúscula
- *  */
+ */
 
 function convertirEnFormatoDeTitulo(texto){
     let textoEnFormatoDeTitulo = texto[0].toUpperCase();
@@ -16,7 +16,7 @@ function convertirEnFormatoDeTitulo(texto){
 }
 
 let textoParaModificar = "este texto es increiblemente bueno";
-console.log(convertirEnFormatoDeTitulo(textoParaModificar));
+//console.log(convertirEnFormatoDeTitulo(textoParaModificar));
 /****************************************************************************************************************/
 
 /** Ejercicio 2: Concatenar elementos de un array con un separador personalizado:
@@ -37,10 +37,40 @@ function concatenarElementosConSeparador(elementos, separador){
 
 let elementosParaConcatenar = ["Hola", "soy", "Mauricio", "Falcon", "y", "este", "texto", "es", "increible"];
 let elementoSeparador = "-"
-console.log(concatenarElementosConSeparador(elementosParaConcatenar, elementoSeparador))
+//console.log(concatenarElementosConSeparador(elementosParaConcatenar, elementoSeparador))
 /****************************************************************************************************************/
 
 /** Ejercicio 3: Revertir las palabras de una frase.
- * Crear una función que reciba una cadena de texto y devuelva la misma cadena con las palabras
- * en orden inverso
+ * Crear una función que reciba una cadena de texto 
+ * y devuelva la misma cadena con las palabras en orden inverso
  */
+
+function revertirPalabras(frase) {
+    let palabra = "";
+    let palabrasInvertidas = [];
+    for (let i = frase.length - 1; i >= 0; i--) {
+        if (frase[i] != " ") {
+            palabra = frase[i] + palabra;
+        } else if (palabra != "") {
+            palabrasInvertidas.push(palabra); 
+            palabra = "";
+        }
+    }
+
+    if (palabra != "") {
+        palabrasInvertidas.push(palabra);
+    }
+
+    let fraseInvertida = "";
+    for (let i = 0; i < palabrasInvertidas.length; i++) {
+        fraseInvertida += palabrasInvertidas[i];
+        if (i != palabrasInvertidas.length - 1) {
+            fraseInvertida += " ";
+        }
+    }
+
+    return fraseInvertida;
+}
+
+let fraseOriginal = "Soy Mauricio Falcon y estoy estudiando";
+console.log(revertirPalabras(fraseOriginal));
