@@ -225,9 +225,34 @@ function combinarArrays(primerArray, segundoArray){
 
 let array1 = [1, 2, 3];
 let array2 = ['a', 'b', 'c', 'd'];
-console.log(combinarArrays(array1, array2));
+//console.log(combinarArrays(array1, array2));
 /****************************************************************************************************************/
 
-/** Ejercicio 9: 
- * 
+/** Ejercicio 9: Calcular impuestos.
+ * Desarrollar una función que permita conocer los impuestos que debe abonar una persona dada
+ * su edad y sus ingresos mensuales. Los impuestos a abonar por una persona entre 18 y 20 años
+ * es un 10% de los ingresos; las personas entre 21 y 30 deben abonar 15% de los ingresos; y
+ * todo el resto un 40%. Los menores de edad no abonan impuestos.
  */
+
+function calcularImpuestos(edad, ingresos){
+    let impuestos = 0;
+
+    if (edad < 18){
+        return impuestos;
+    }
+
+    if (edad >= 18 && edad <= 20){
+        impuestos = ingresos * 0.1;
+    }else if(edad >= 21 && edad <= 30){
+        impuestos = ingresos * 0.15;
+    }
+    else impuestos = ingresos * 0.40;
+
+    return impuestos;
+}
+
+let edadDelTrabajador = 40;
+let ingresosDelTrabajador = 1000;
+console.log(calcularImpuestos(edadDelTrabajador, ingresosDelTrabajador));
+/****************************************************************************************************************/
