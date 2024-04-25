@@ -276,4 +276,4 @@ function resumenLikes(likes){
     }
 }
 
-console.log(resumenLikes(34567));
+//console.log(resumenLikes(34567));
